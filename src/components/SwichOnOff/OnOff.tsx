@@ -6,10 +6,6 @@ type PropsType = {
 };
 
 export function OnOff(props: PropsType) {
-  console.log("OnOff rendering");
-
-  
-
   const OnStyle = {
     width: "30px",
     height: "20px",

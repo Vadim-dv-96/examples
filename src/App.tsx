@@ -16,7 +16,7 @@ function App() {
        <AppTittle tittle = { "This is app components" } />
       <AppTittle tittle = { "Lina" } />
       <Rating value = {ratingValue} onClick = { setratingValue } />
-      <Accordion tittleValue = { "Menu " } collapsed = { accordionCollapsed } onClick = { () => { setaccordionCollapsed(!accordionCollapsed) } } />
+      <Accordion tittleValue={"Menu "} collapsed={accordionCollapsed} onClick={() => { setaccordionCollapsed(!accordionCollapsed); } } items={[{value:1, tittle:"Lina"}]} onClick2={ () => {alert("click")} } />
       {/* <Accordion tittleValue = { "Users" } collapsed = { false } /> */}
       <UnConrtolledAccordion tittleValue = { "Menu " }  />
       <UnConrtolledAccordion tittleValue = { "Users" }  />
