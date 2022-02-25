@@ -20,7 +20,8 @@ export function Accordion(props: AccordionPropsType) {
       </div>
     );
   } 
-    
+
+ 
 
 type AccordionTittlePropsType = {
   tittle: string;

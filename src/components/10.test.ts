@@ -13,7 +13,7 @@ test ( "reference type test" , () => {
         name: "Dimych",
         hair: 32,
         address: {
-            title: "Minsc"
+            city: "Minsc"
         }
     }
 

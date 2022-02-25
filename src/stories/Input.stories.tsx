@@ -5,28 +5,24 @@ import { ChangeEvent, useRef, useState } from 'react';
 
 export default {
   title: 'input',
-  // component: input,
-} as ComponentMeta<typeof input>;
-const Template: ComponentStory<typeof input> = (args) => <input {...args} />;
-export const LoggedIn = Template.bind({});
-LoggedIn.args = {
-  user: {},
-};
-
-export const LoggedOut = Template.bind({});
-LoggedOut.args = {};
+} 
 
 export const UncontrolledInput = () => <input/>
 
 
 export const TrackValueUncontrolledInput = () =>  {
+
   const[value,setValue]=useState("")
+
   const onChange = (event:ChangeEvent<HTMLInputElement>) => {
     const PressKey = event.currentTarget.value
-    setValue(PressKey)
-return ( <><input onChange={ onChange } /> - {value} </>
+    setValue(PressKey);
+} 
+return (
+  <><input onChange={ onChange } /> - {value} </>
 )
-} }
+
+}
 
 
 export const GetValueUncontrolledInputByButtonPress = () =>  {
