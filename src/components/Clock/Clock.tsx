@@ -1,7 +1,14 @@
+import { type } from "@testing-library/user-event/dist/type"
 import { useEffect, useState } from "react"
+import { AnalogClockView } from "./AnalogClockView"
+import { DigitalClockView } from "./DigitalClockView"
 
 type PropsType = {
+    mode: "digital" | "analog"
+}
 
+export type ClockViewPropsType = {
+    date: Date
 }
 
 export const Clock: React.FC<PropsType> = (props) => {
@@ -22,35 +29,35 @@ export const Clock: React.FC<PropsType> = (props) => {
 
     },[] )
 
-    // Альтернативный вариант без дублирования кода
 
-    // const getString = ( num: number ) => num < 10 ? "0" + num : num
+    // const secondsString = date.getSeconds() < 10
+    // ? "0" + date.getSeconds()
+    // : date.getSeconds()
 
-    // const secondsString = getString( date.getSeconds() )
+    // const minutesString = date.getMinutes() < 10
+    // ? "0" + date.getMinutes()
+    // : date.getMinutes()
 
-    // const minutesString = getString( date.getMinutes() )
+    // const hoursString = date.getHours() < 10
+    // ? "0" + date.getHours()
+    // : date.getHours()
+    
 
-    // const hoursString = getString( date.getHours() )
+    let view;
 
-    const secondsString = date.getSeconds() < 10
-    ? "0" + date.getSeconds()
-    : date.getSeconds()
-
-    const minutesString = date.getMinutes() < 10
-    ? "0" + date.getMinutes()
-    : date.getMinutes()
-
-    const hoursString = date.getHours() < 10
-    ? "0" + date.getHours()
-    : date.getHours()
+    switch (props.mode) {
+        case "analog":
+            view = <AnalogClockView date={date} />
+            break;
+        case "digital":
+        default:
+            view = <DigitalClockView date={date} />  
+    }
 
     return ( 
-    <div>
-        <span> {hoursString} </span>
-        :
-        <span> {minutesString} </span>
-        :
-        <span> {secondsString} </span>
-    </div>
+    <div> {view} </div>
     )
 }
+
+ 
+
